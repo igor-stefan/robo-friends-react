@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Earthrealm 3D Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('./fonts/Earthrealm 3D Regular'), url('./fonts/Earthrealm3D-0AEr.woff') format('woff');
+    }
+
+@font-face {
+    font-family: 'Earthrealm 3D Italic Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('./fonts/Earthrealm 3D Italic Italic'), url('./fonts/Earthrealm3DItalic-ed7O.woff') format('woff');
+}
+
+h1{
+    font-family: 'Earthrealm 3D Italic Italic';
+    font-weight: bolder;
+    color: #000000;
+}
