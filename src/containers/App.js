@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import CardList from '../components/CardList'
-import { newRobots } from './robots.js'
 import SearchBox from '../components/SearchBox'
 import Scroll from '../components/Scroll'
 import ErrorBoundry from '../components/ErrorBoundry'
@@ -10,9 +9,15 @@ class App extends Component {
     constructor(){
         super()
         this.state = {
-            robots: newRobots,
+            robots: [],
             searchField: ''
         }
+    }
+
+    componentDidMount(){
+        fetch('https://my.api.mockaroo.com/robots.json?key=689f73b0')
+        .then(response => response.json())
+        .then(robots => {this.setState({robots: robots.filter(robot => robot.email.length <= 27)})})
     }
 
     onSearchChange = (event) => {
